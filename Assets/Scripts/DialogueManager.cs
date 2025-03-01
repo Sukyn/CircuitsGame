@@ -25,6 +25,8 @@ public class DialogueManager : MonoBehaviour
     public GameObject dialogueBackground;
     public TextMeshProUGUI dialogueText;
     public Image speakerBannerImage;
+    public AudioClip typingSound;
+    private AudioSource audioSource;
     private bool isTalking = false;
     private bool isTyping = false;
     private List<string> dialogues = new List<string>();
@@ -35,6 +37,13 @@ public class DialogueManager : MonoBehaviour
 
     void Start()
     {
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+            audioSource.playOnAwake = false;
+            audioSource.loop = true;
+        }
+
         LoadDialogues(dialogueSection);
         if (dialogues.Count > 0)
         {
@@ -48,6 +57,7 @@ public class DialogueManager : MonoBehaviour
         {
             if (isTyping) {
                 StopAllCoroutines();
+                audioSource.Stop();
                 dialogueText.text = dialogues[currentDialogueIndex];
                 isTyping = false;
             } else {
@@ -66,12 +76,19 @@ public class DialogueManager : MonoBehaviour
         // Charge et applique la bannière dynamique en fonction du speaker et team
         ApplyBannerFromSpeakerAndTeam();
 
+        if (typingSound != null && audioSource != null)
+        {
+            audioSource.clip = typingSound;
+            audioSource.Play();
+        }
+
         foreach (char letter in text)
         {
             dialogueText.text += letter;
             yield return new WaitForSeconds(typingSpeed);
         }
 
+        audioSource.Stop();
         isTyping = false;
     }
 

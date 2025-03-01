@@ -75,6 +75,33 @@
 				"A adapter selon le cas : soit 'Bravo tu as fini le jeu', ou 'Bravo tu as fini le tutoriel, tu peux passer au mode infini', ou continuer le tuto si on a les portes à 2 niveaux"
 			],
 			"voices": []
+		},
+		{
+			"category": "tutoriel_8",
+			"speaker": "Ratafiel",
+			"team": "Ally",
+			"lines": [
+				"Si deux duellistes enchaînés en rencontrent deux autres, tu peux les faire disparaître avec le sort d'Intrication"
+			],
+			"voices": []
+		},
+		{
+			"category": "tutoriel_9",
+			"speaker": "Ratafiel",
+			"team": "Ally",
+			"lines": [
+				"Le sort de Métamorphose intriquée marche sur les ennemis enchaînés.\n Essaye-donc sur eux."
+			],
+			"voices": []
+		},
+		{
+			"category": "tutoriel_10",
+			"speaker": "Ratafiel",
+			"team": "Ally",
+			"lines": [
+				"Je dois y aller, mais les ennemis continuent d'affluer donc bonne chance !!"
+			],
+			"voices": []
 		}
   ]
 }
