@@ -11,9 +11,11 @@ public class Node : MonoBehaviour
     [SerializeField] SpriteRenderer spriteRenderer, emptySpriteRenderer;
     [SerializeField] GameObject links;
     [SerializeField] GameObject upLink, downLink;
+    public NodeLink leftLink, rightLink;
 
     private bool isSelected = false;
-    public Vector2Int gridCoor = Vector2Int.zero;
+    [HideInInspector] public Vector2Int gridCoor = Vector2Int.zero;
+
 
     public NodeType type;
 
@@ -28,6 +30,24 @@ public class Node : MonoBehaviour
         Empty
     }
 
+    public Node GetLeftNeigbor() => GetNeigbor(-1);
+
+    public Node GetRightNeigbor() => GetNeigbor(1);
+
+    public Node GetNeigbor(int dx)
+    {
+        Level level = Level.currentLevel;
+        Node[,] nodesGrid = level.nodesGrid;
+
+        int x = gridCoor.x + dx;
+
+        if (x < 0 ||
+            x >= nodesGrid.GetLength(0))
+            return null;
+
+        else return nodesGrid[x, gridCoor.y];
+    }
+
     public void SetType(NodeType type)
     {
         this.type = type;
@@ -39,6 +59,9 @@ public class Node : MonoBehaviour
         this.isSelected = isSelected;
 
         if (isSelected)
+            NodeLink.UnselectAllLinks();
+
+        if (isSelected)
             selectedNodesSet.Add(this);
 
         if (!isSelected)
@@ -46,8 +69,8 @@ public class Node : MonoBehaviour
 
         nodeSelectedEvent.Invoke();
 
-        UpdateSprite();
 
+        UpdateSprite();
     }
 
     void ToggleIsSelected() => SetIsSelected(!isSelected);
@@ -109,7 +132,6 @@ public class Node : MonoBehaviour
     void OnMouseDown()
     {
         ToggleIsSelected();
-        //Debug.Log(gameObject.name + (isSelected ? " sélectionné !" : " désélectionné !"));
     }
 
     public override string ToString()
