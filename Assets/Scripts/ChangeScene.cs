@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
     public Button playButton;
-    public string SceneName;
+    public string SceneName = "MainMenu";
 
     void Start()
     {
@@ -14,6 +14,8 @@ public class MainMenu : MonoBehaviour
 
     void StartGame()
     {
-        SceneManager.LoadScene(SceneName);
+        string currentScene = SceneManager.GetActiveScene().name; 
+        SceneManager.LoadScene(SceneName, LoadSceneMode.Single);
+        SceneManager.UnloadSceneAsync(currentScene);
     }
 }
