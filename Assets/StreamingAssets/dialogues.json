@@ -3,7 +3,7 @@
 		{
 			"category": "tutoriel_1",
 			"speaker": "Ratafiel",
-			"team": "ally",
+			"team": "Ally",
 			"lines": [
 				"Salutations, valeureux général !\nJe suis l'enchanteur Ratafiel.",
 				"Sa Majesté le roi m'a envoyé quérir pour te prêter main forte et défaire les forces armées qui assaillent le château.",
@@ -20,6 +20,61 @@
 				"tutoriel_1_line_5.mp3",
 				"tutoriel_1_line_6.mp3"
 			]
+		},
+		{
+			"category": "tutoriel_2",
+			"speaker": "Ratafiel",
+			"team": "Ally",
+			"lines": [
+				"Quand tu sélectionnes des portes, les règles applicables se mettent en surbrillance"
+			],
+			"voices": []
+		},
+		{
+			"category": "tutoriel_3",
+			"speaker": "Ratafiel",
+			"team": "Ally",
+			"lines": [
+				"Bien ! Utilise le sort de télékinesie pour rapprocher les ennemis restants."
+			],
+			"voices": []
+		},
+		{
+			"category": "tutoriel_4",
+			"speaker": "Ratafiel",
+			"team": "Ally",
+			"lines": [
+				"D'autres vagues d'ennemis arrivent ! Dépechons-nous."
+			],
+			"voices": []
+		},
+		{
+			"category": "tutoriel_5",
+			"speaker": "Ratafiel",
+			"team": "Ally",
+			"lines": [
+				"Le sort de métamorphose est utile pour se débarasser des duellistes."
+			],
+			"voices": []
+		},
+		{
+			"category": "tutoriel_6",
+			"speaker": "Ratafiel",
+			"team": "Ally",
+			"lines": [
+				"Invoquer des soldats ennemis peut sembler contre intuitifs, mais parfois ajouter du chaos aide à utiliser tes sortilèges !",
+				"Sélectionner des cases vides pour ajouter des ennemis."
+			],
+			"voices": []
+		},
+		{
+			"category": "tutoriel_7",
+			"speaker": "Ratafiel",
+			"team": "Ally",
+			"lines": [
+				"A adapter selon le cas : soit 'Bravo tu as fini le jeu', ou 'Bravo tu as fini le tutoriel, tu peux passer au mode infini', ou continuer le tuto si on a les portes à 2 niveaux"
+			],
+			"voices": []
 		}
   ]
 }

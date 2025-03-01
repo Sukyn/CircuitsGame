@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b9be0d15f88fae345896954e8c4786c7
+guid: 23b91329dbc11fe48a3435ccef8abde5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7872265492170008041
-    second: dialogueBackgroundSmall_0
+      213: 9028989280119009689
+    second: paysage_chateau_double_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dialogueBackgroundSmall_0
+      name: paysage_chateau_double_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 190
-        height: 45
+        width: 1080
+        height: 1920
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 71a14a17e3810c290800000000000000
-      internalID: -7872265492170008041
+      spriteID: 991bd42a9e96d4d70800000000000000
+      internalID: 9028989280119009689
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      dialogue-background_0: -6720665730356622093
+      paysage_chateau_double_0: 9028989280119009689
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
