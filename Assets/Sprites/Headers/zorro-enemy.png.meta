@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 94c1e732a08179348b269168ccbc1766
+guid: 8e486a80e0319c246aced94ffb3491f2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4901612590117118656
-    second: restart-better_0
+      213: 1014537305106031386
+    second: zorro-enemy_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: restart-better_0
+      name: zorro-enemy_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 60
-        height: 50
+        width: 498
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 04d9c73b159f9fbb0800000000000000
-      internalID: -4901612590117118656
+      spriteID: a132a32cd4c541e00800000000000000
+      internalID: 1014537305106031386
       vertices: []
       indices: 
       edges: []
@@ -160,8 +160,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      restart_0: -3026058171327407114
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

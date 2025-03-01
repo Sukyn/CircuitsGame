@@ -79,8 +79,11 @@ public class DialogueManager : MonoBehaviour
     }
 
     private void CloseDialogue() {
+        StopAllCoroutines();
+        dialogueText.text = "";
+        dialogueBackground.transform.parent.gameObject.SetActive(false);
         isTalking = false;
-        dialogueBackground.SetActive(false);
+        isTyping = false;
     }
 
     private void LoadDialogues(string dialogueCategory)

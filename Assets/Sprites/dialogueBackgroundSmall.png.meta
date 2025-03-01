@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 94c1e732a08179348b269168ccbc1766
+guid: b9be0d15f88fae345896954e8c4786c7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4901612590117118656
-    second: restart-better_0
+      213: -7872265492170008041
+    second: dialogueBackgroundSmall_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: restart-better_0
+      name: dialogueBackgroundSmall_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 60
-        height: 50
+        width: 190
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 04d9c73b159f9fbb0800000000000000
-      internalID: -4901612590117118656
+      spriteID: 71a14a17e3810c290800000000000000
+      internalID: -7872265492170008041
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      restart_0: -3026058171327407114
+      dialogue-background_0: -6720665730356622093
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
