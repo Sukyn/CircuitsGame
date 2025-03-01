@@ -2,10 +2,11 @@ using UnityEngine;
 
 public class Node : MonoBehaviour
 {
-    private Color originalColor;
     private SpriteRenderer spriteRenderer;
     private bool isSelected = false;
+
     public NodeType type;
+
     public enum NodeType {
         X,
         H,
@@ -14,33 +15,40 @@ public class Node : MonoBehaviour
         Z2
     }
 
-    void Start() {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        originalColor = spriteRenderer.color;
+
+    void OnValidate()
+    {
+        Cache();
+        UpdateColor();
     }
 
-    void OnMouseDown() {
-        if (isSelected) {
+    void UpdateColor()
+    {
+        if (type == NodeType.X || type == NodeType.X2)
+            spriteRenderer.color = isSelected ? new Color(1, 0.5f, 0.5f) : new Color(1, 0, 0);
 
-            spriteRenderer.color = originalColor;
-            isSelected = false;
-            Debug.Log(gameObject.name + " désélectionné !");
+        else if (type == NodeType.Z || type == NodeType.Z2)
+            spriteRenderer.color = isSelected ? new Color(0.5f, 1, 0.5f) : new Color(0, 1, 0);
 
-        } else {
-            switch(type) {
-                case NodeType.Z:
-                    spriteRenderer.color = Color.green;
-                    break;
-                case NodeType.X:
-                    spriteRenderer.color = Color.red;
-                    break;
-                case NodeType.H:
-                    spriteRenderer.color = Color.yellow;
-                    break;
-            }
-            isSelected = true;
-            Debug.Log(gameObject.name + " sélectionné !");
-        }
+        else if (type == NodeType.H)
+            spriteRenderer.color = isSelected ? new Color(1, 1f, 0.5f) : new Color(1, 1, 0);
+    }
+
+    void Start() {
+        Cache();
+    }
+
+    void Cache()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+
+    void OnMouseDown()
+    {
+        isSelected = !isSelected;
+        UpdateColor();
+        //Debug.Log(gameObject.name + (isSelected ? " sélectionné !" : " désélectionné !"));
     }
 
     public override string ToString()
