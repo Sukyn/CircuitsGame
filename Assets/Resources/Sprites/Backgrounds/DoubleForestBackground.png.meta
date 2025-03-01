@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: dee6a8d06c3b6f84cb540fc06e406495
+guid: 7f6f84458c3469d45811663041816794
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1521905762407349566
-    second: backgroundGame_0
+      213: 7369957281217678075
+    second: paysage_chemin_double_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,7 +126,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: backgroundGame_0
+      name: paysage_chemin_double_0
       rect:
         serializedVersion: 2
         x: 0
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2c20712c5ca11eae0800000000000000
-      internalID: -1521905762407349566
+      spriteID: bfa88cc7919574660800000000000000
+      internalID: 7369957281217678075
       vertices: []
       indices: 
       edges: []
@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      paysage_chemin_double_0: 7369957281217678075
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

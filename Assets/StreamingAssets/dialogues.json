@@ -37,9 +37,7 @@
 			"lines": [
 				"Bien ! Utilise le sort de télékinesie pour rapprocher les ennemis restants."
 			],
-			"voices": [
-				"null"
-			]
+			"voices": []
 		},
 		{
 			"category": "tutoriel_4",
@@ -48,9 +46,7 @@
 			"lines": [
 				"D'autres vagues d'ennemis arrivent ! Dépechons-nous."
 			],
-			"voices": [
-				"null"
-			]
+			"voices": []
 		},
 		{
 			"category": "tutoriel_5",
@@ -59,9 +55,7 @@
 			"lines": [
 				"Le sort de métamorphose est utile pour se débarasser des duellistes."
 			],
-			"voices": [
-				"null"
-			]
+			"voices": []
 		},
 		{
 			"category": "tutoriel_6",
@@ -69,11 +63,9 @@
 			"team": "Ally",
 			"lines": [
 				"Invoquer des soldats ennemis peut sembler contre intuitifs, mais parfois ajouter du chaos aide à utiliser tes sortilèges !",
-				"Selectionner des cases vides pour ajouter des ennemis."
+				"Sélectionner des cases vides pour ajouter des ennemis."
 			],
-			"voices": [
-				"null"
-			]
+			"voices": []
 		},
 		{
 			"category": "tutoriel_7",
@@ -82,10 +74,7 @@
 			"lines": [
 				"A adapter selon le cas : soit 'Bravo tu as fini le jeu', ou 'Bravo tu as fini le tutoriel, tu peux passer au mode infini', ou continuer le tuto si on a les portes à 2 niveaux"
 			],
-			"voices": [
-				"null"
-			]
+			"voices": []
 		}
-  
   ]
 }
