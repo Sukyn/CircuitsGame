@@ -12,6 +12,10 @@ public class Level : MonoBehaviour
     void Start()
     {
         nodesGrid = BuildNodesGrid();
+
+        if (!UpDownMatch(nodesGrid))
+            Debug.LogWarning($"{gameObject.name} : Up Down Don't match");
+
         print(this);
     }
 
@@ -28,8 +32,8 @@ public class Level : MonoBehaviour
         for (int i = 0; i < nodes.Length; i++)
         {
             Node node = nodes[i];
-            int x = (int)node.transform.position.x;
-            int y = (int)node.transform.position.y;
+            int x =  (int)node.transform.position.x;
+            int y = -(int)node.transform.position.y;
             xMin = Mathf.Min(xMin, x);
             xMax = Mathf.Max(xMax, x);
             yMin = Mathf.Min(yMin, y);
@@ -41,8 +45,8 @@ public class Level : MonoBehaviour
         for (int i = 0; i < nodes.Length; i++)
         {
             Node node = nodes[i];
-            int x = (int)node.transform.position.x;
-            int y = (int)node.transform.position.y;
+            int x =  (int)node.transform.position.x;
+            int y = -(int)node.transform.position.y;
             nodesGrid[x - xMin, y - yMin] = node;
         }
 
@@ -62,5 +66,19 @@ public class Level : MonoBehaviour
         }
 
         return str;
+    }
+
+    bool UpDownMatch(Node[,] nodesGrid)
+    {
+        for (int y = 0; y < nodesGrid.GetLength(1); y++)
+            for (int x = 0; x < nodesGrid.GetLength(0); x++)
+                if (((nodesGrid[x, y].type == Node.NodeType.XUp || nodesGrid[x, y].type == Node.NodeType.ZUp) &&
+                    !(nodesGrid[x, y+1].type == Node.NodeType.XDown || nodesGrid[x, y+1].type == Node.NodeType.ZDown))
+                    ||
+                    ((nodesGrid[x, y].type == Node.NodeType.XDown || nodesGrid[x, y].type == Node.NodeType.ZDown) &&
+                    !(nodesGrid[x, y-1].type == Node.NodeType.XUp || nodesGrid[x, y-1].type == Node.NodeType.ZUp)))
+                    return false;
+
+        return true;
     }
 }
