@@ -22,12 +22,12 @@ public class GameObjectMatrix : MonoBehaviour
         }
 
         for (int col = 0; col < initialColumns; col++) {
-            List<GameObject> prefabs = new List<GameObject>();
-            for(int row = 0; row < rowNumber(); row++) {
-                GameObject selectedPrefab = objectPrefabs[Random.Range(0, objectPrefabs.Length)];
-                prefabs.Add(selectedPrefab);
-            }
-            AddColumn(col, prefabs);
+            // List<GameObject> prefabs = new List<GameObject>();
+            // for(int row = 0; row < rowNumber(); row++) {
+            //     GameObject selectedPrefab = objectPrefabs[Random.Range(0, objectPrefabs.Length)];
+            //     prefabs.Add(selectedPrefab);
+            // }
+            // AddColumn(col, prefabs);
         }
     }
 
