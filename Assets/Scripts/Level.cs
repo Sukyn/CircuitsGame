@@ -48,6 +48,7 @@ public class Level : MonoBehaviour
             int x =  (int)node.transform.position.x;
             int y = -(int)node.transform.position.y;
             nodesGrid[x - xMin, y - yMin] = node;
+            node.gridCoor = new Vector2Int(x, y);
         }
 
         return nodesGrid;

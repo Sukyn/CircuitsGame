@@ -321,6 +321,7 @@ MonoBehaviour:
   links: {fileID: 5567038957357290976}
   upLink: {fileID: 9162806515668477237}
   downLink: {fileID: 1147287279374893297}
+  gridCoor: {x: 0, y: 0}
   type: 0
 --- !u!61 &8512564610627254202
 BoxCollider2D:

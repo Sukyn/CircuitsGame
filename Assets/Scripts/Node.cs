@@ -1,12 +1,19 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Node : MonoBehaviour
 {
+    public static HashSet<Node> selectedNodesSet = new HashSet<Node>();
+    public static UnityEvent nodeSelectedEvent = new UnityEvent(); // Invoked each time a node has been selected or deselected
+
     [SerializeField] SpriteRenderer spriteRenderer, emptySpriteRenderer;
     [SerializeField] GameObject links;
     [SerializeField] GameObject upLink, downLink;
 
     private bool isSelected = false;
+    public Vector2Int gridCoor = Vector2Int.zero;
 
     public NodeType type;
 
@@ -21,10 +28,52 @@ public class Node : MonoBehaviour
         Empty
     }
 
+    public void SetType(NodeType type)
+    {
+        this.type = type;
+        UpdateSprite();
+    }
+
+    void SetIsSelected(bool isSelected)
+    {
+        this.isSelected = isSelected;
+
+        if (isSelected)
+            selectedNodesSet.Add(this);
+
+        if (!isSelected)
+            selectedNodesSet.Remove(this);
+
+        nodeSelectedEvent.Invoke();
+
+        UpdateSprite();
+
+    }
+
+    void ToggleIsSelected() => SetIsSelected(!isSelected);
 
     void OnValidate()
     {
         UpdateSprite();
+    }
+
+
+    void OnEnable()
+    {
+        if (isSelected)
+        {
+            selectedNodesSet.Add(this);
+            nodeSelectedEvent.Invoke();
+        }
+    }
+
+    void OnDisable()
+    {
+        if (isSelected)
+        {
+            selectedNodesSet.Remove(this);
+            nodeSelectedEvent.Invoke();
+        }
     }
 
     void UpdateSprite()
@@ -59,8 +108,7 @@ public class Node : MonoBehaviour
 
     void OnMouseDown()
     {
-        isSelected = !isSelected;
-        UpdateSprite();
+        ToggleIsSelected();
         //Debug.Log(gameObject.name + (isSelected ? " sélectionné !" : " désélectionné !"));
     }
 
@@ -79,5 +127,34 @@ public class Node : MonoBehaviour
         }
 
         return "";
+    }
+
+    public static Node[,] SelectedNodesGrid()
+    {
+        int xMin = int.MaxValue;
+        int xMax = int.MinValue;
+        int yMin = int.MaxValue;
+        int yMax = int.MinValue;
+
+        foreach (Node node in selectedNodesSet)
+        {
+            xMin = Mathf.Min(xMin, node.gridCoor.x);
+            xMax = Mathf.Max(xMax, node.gridCoor.x);
+            yMin = Mathf.Min(yMin, node.gridCoor.y);
+            yMax = Mathf.Max(yMax, node.gridCoor.y);
+        }
+
+        Node[,] nodesGrid = new Node[xMax - xMin + 1, yMax - yMin + 1];
+
+        foreach (Node node in selectedNodesSet)
+            nodesGrid[node.gridCoor.x - xMin, node.gridCoor.y - yMin] = node;
+
+        return nodesGrid;
+    }
+
+    public static void UnselectAllNodes()
+    {
+        foreach (Node node in selectedNodesSet.ToArray())
+            node.SetIsSelected(false);
     }
 }
