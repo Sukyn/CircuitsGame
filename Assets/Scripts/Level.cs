@@ -92,23 +92,23 @@ public class Level : MonoBehaviour
         return true;
     }
 
-    public void InsertEmptyColumn(int columnIdx)
+    public void InsertEmptyColumn(int xColumn)
     {
         Node[,] newGrid = new Node[nodesGrid.GetLength(0) + 1, nodesGrid.GetLength(1)];
 
         for (int y = 0; y < nodesGrid.GetLength(1); y++)
         {
-            for (int x = 0; x < columnIdx; x++)
+            for (int x = 0; x < xColumn; x++)
                 newGrid[x, y] = nodesGrid[x, y];
 
             Node emptyNode = Instantiate(nodePrefab);
             emptyNode.SetType(Node.NodeType.Empty);
             emptyNode.transform.parent = transform;
-            emptyNode.transform.localPosition = new Vector3Int(columnIdx, -y, 0);
-            emptyNode.gridCoor = new Vector2Int(columnIdx, y);
-            newGrid[columnIdx, y] = emptyNode;
+            emptyNode.transform.localPosition = new Vector3Int(xColumn, -y, 0);
+            emptyNode.gridCoor = new Vector2Int(xColumn, y);
+            newGrid[xColumn, y] = emptyNode;
 
-            for (int x = columnIdx; x < nodesGrid.GetLength(0); x++)
+            for (int x = xColumn; x < nodesGrid.GetLength(0); x++)
             {
                 newGrid[x+1, y] = nodesGrid[x, y];
                 newGrid[x+1, y].gridCoor.x++;
@@ -119,5 +119,31 @@ public class Level : MonoBehaviour
         nodesGrid = newGrid;
 
         transform.position += Vector3.left * 0.5f;
+    }
+
+    public void RemoveColumn(int xColumn)
+    {
+        Node.UnselectAllNodes();
+
+        Node[,] newGrid = new Node[nodesGrid.GetLength(0) - 1, nodesGrid.GetLength(1)];
+
+        for (int y = 0; y < nodesGrid.GetLength(1); y++)
+        {
+            for (int x = 0; x < xColumn; x++)
+                newGrid[x, y] = nodesGrid[x, y];
+
+            for (int x = xColumn; x < newGrid.GetLength(0); x++)
+            {
+                newGrid[x, y] = nodesGrid[x+1, y];
+                newGrid[x, y].gridCoor.x--;
+                newGrid[x, y].transform.position -= Vector3.right;
+            }
+
+            Destroy(nodesGrid[xColumn, y].gameObject);
+        }
+
+        nodesGrid = newGrid;
+
+        transform.position += Vector3.right * 0.5f;
     }
 }

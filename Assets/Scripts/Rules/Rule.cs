@@ -60,7 +60,7 @@ public abstract class Rule : MonoBehaviour
 
         for (int y = 0; y < nodesGrid.GetLength(1); y++)
             for (int x = 0; x < nodesGrid.GetLength(0); x++)
-                if (nodesGrid[x, y].type != typesGrid[x, y])
+                if (!nodesGrid[x, y] || nodesGrid[x, y].type != typesGrid[x, y])
                     return false;
 
         return true;

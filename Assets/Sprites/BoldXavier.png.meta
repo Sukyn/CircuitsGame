@@ -310,7 +310,14 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BoldXavier_0: -3977988997776109544
+      BoldXavier_1: 8570689909654434179
+      BoldXavier_2: -5108211186505408166
+      BoldXavier_3: -3328414310610634224
+      BoldXavier_4: -7512156863615589717
+      BoldXavier_5: -2197711192693467452
+      BoldXavier_6: 3695632878992997671
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

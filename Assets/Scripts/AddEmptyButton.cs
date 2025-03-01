@@ -24,12 +24,12 @@ public class AddEmptyButton : MonoBehaviour
 
     void OnClick()
     {
-        int columnIdx = NodeLink.selectedLinksList[0].node.gridCoor.x;
+        int xColumn = NodeLink.selectedLinksList[0].node.gridCoor.x;
 
         if (!NodeLink.selectedLinksList[0].isLeft)
-            columnIdx++;
+            xColumn++;
 
-        Level.currentLevel.InsertEmptyColumn(columnIdx);
+        Level.currentLevel.InsertEmptyColumn(xColumn);
 
         NodeLink.UnselectAllLinks();
     }

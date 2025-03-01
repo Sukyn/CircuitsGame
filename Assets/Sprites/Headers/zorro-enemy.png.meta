@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      zorro-enemy_0: 1014537305106031386
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

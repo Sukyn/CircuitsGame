@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ratafiel-ally_0: 7726828714678163508
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

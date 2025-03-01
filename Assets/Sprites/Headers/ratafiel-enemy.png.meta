@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ratafiel-enemy_0: 1271743969294098925
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
