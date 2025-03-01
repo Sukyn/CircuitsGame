@@ -18,8 +18,6 @@ public class Level : MonoBehaviour
 
         if (!UpDownMatch(nodesGrid))
             Debug.LogWarning($"{gameObject.name} : Up Down Don't match");
-
-        print(this);
     }
 
     void OnEnable()

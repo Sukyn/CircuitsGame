@@ -7,8 +7,8 @@ public class Intrication : Rule
         Node.NodeType[,] nodesGrid = new Node.NodeType[2, 2];
         nodesGrid[0, 0] = Node.NodeType.ZUp;
         nodesGrid[1, 0] = Node.NodeType.ZUp;
-        nodesGrid[0, 1] = Node.NodeType.XDown;
-        nodesGrid[1, 1] = Node.NodeType.XDown;
+        nodesGrid[0, 1] = Node.NodeType.ZDown;
+        nodesGrid[1, 1] = Node.NodeType.ZDown;
         return nodesGrid;
     }
 

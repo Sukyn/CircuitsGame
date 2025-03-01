@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -8,13 +9,15 @@ public class Node : MonoBehaviour
     public static HashSet<Node> selectedNodesSet = new HashSet<Node>();
     public static UnityEvent nodeSelectedEvent = new UnityEvent(); // Invoked each time a node has been selected or deselected
 
-    [SerializeField] SpriteRenderer spriteRenderer, emptySpriteRenderer;
-    [SerializeField] GameObject links;
+    [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] SpriteRenderer horizontalLinkSpriteRenderer;
     [SerializeField] GameObject upLink, downLink;
     public NodeLink leftLink, rightLink;
 
     private bool isSelected = false;
     [HideInInspector] public Vector2Int gridCoor = Vector2Int.zero;
+
+    [SerializeField] List<Sprite> sprites;
 
 
     public NodeType type;
@@ -80,7 +83,6 @@ public class Node : MonoBehaviour
         UpdateSprite();
     }
 
-
     void OnEnable()
     {
         if (isSelected)
@@ -101,32 +103,19 @@ public class Node : MonoBehaviour
 
     void UpdateSprite()
     {
-        if (!spriteRenderer ||
-            !emptySpriteRenderer)
+        if (!spriteRenderer)
             return;
 
-        spriteRenderer     .gameObject.SetActive(type != NodeType.Empty);
-        emptySpriteRenderer.gameObject.SetActive(type == NodeType.Empty);
+        spriteRenderer.sprite = sprites[(int)type];
+        spriteRenderer.color = isSelected ? Color.grey : Color.white;
+        horizontalLinkSpriteRenderer.color = (type == NodeType.Empty && isSelected) ? Color.grey : Color.black;
 
-        links.SetActive(type != NodeType.Empty);
+
         upLink.SetActive(type == NodeType.XDown || type == NodeType.ZDown);
-        downLink.SetActive(type == NodeType.XUp || type == NodeType.ZUp);
+        downLink.SetActive(type == NodeType.XDown || type == NodeType.ZDown);
 
-        if (type == NodeType.X ||
-            type == NodeType.XUp ||
-            type == NodeType.XDown)
-            spriteRenderer.color = isSelected ? new Color(1, 0, 0) : new Color(0.7f, 0, 0);
-
-        else if (type == NodeType.Z ||
-                 type == NodeType.ZUp ||
-                 type == NodeType.ZDown)
-            spriteRenderer.color = isSelected ? new Color(0, 1, 0) : new Color(0, 0.7f, 0);
-
-        else if (type == NodeType.H)
-            spriteRenderer.color = isSelected ? new Color(1, 1, 0) : new Color(0.7f, 0.7f, 0);
-
-        else if (type == NodeType.Empty)
-            emptySpriteRenderer.color = isSelected ? Color.gray : Color.black;
+        leftLink.gameObject.SetActive(type != NodeType.Empty);
+        rightLink.gameObject.SetActive(type != NodeType.Empty);
     }
 
     void OnMouseDown()
