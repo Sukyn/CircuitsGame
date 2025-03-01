@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,6 +9,8 @@ using System.IO;
 public class DialogueEntry
 {
     public string category;
+    public string speaker;
+    public string team;
     public List<string> lines;
 }
 
@@ -21,11 +24,13 @@ public class DialogueManager : MonoBehaviour
 {
     public GameObject dialogueBackground;
     public TextMeshProUGUI dialogueText;
+    public Image speakerBannerImage;
     private bool isTalking = false;
     private bool isTyping = false;
     private List<string> dialogues = new List<string>();
+    private string headerName;
     private int currentDialogueIndex = 0;
-    public string dialogueSection = "intro";
+    public string dialogueSection = "tutoriel_1";
     public float typingSpeed = 0.02f;
 
     void Start()
@@ -42,7 +47,6 @@ public class DialogueManager : MonoBehaviour
         if (isTalking && (Input.GetMouseButtonDown(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)))
         {
             if (isTyping) {
-                // Si l'animation d'écriture est en cours, affiche le texte complet immédiatement
                 StopAllCoroutines();
                 dialogueText.text = dialogues[currentDialogueIndex];
                 isTyping = false;
@@ -59,6 +63,9 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = "";
         dialogueBackground.SetActive(true);
 
+        // Charge et applique la bannière dynamique en fonction du speaker et team
+        ApplyBannerFromSpeakerAndTeam();
+
         foreach (char letter in text)
         {
             dialogueText.text += letter;
@@ -68,7 +75,22 @@ public class DialogueManager : MonoBehaviour
         isTyping = false;
     }
 
-    private void NextDialogue() {
+    private void ApplyBannerFromSpeakerAndTeam() {
+        string bannerPath = "Sprites/Headers/" + headerName;
+
+        // Recherche du sprite à partir du chemin
+        Sprite speakerBanner = Resources.Load<Sprite>(bannerPath);
+
+        if (speakerBanner != null) {
+            speakerBannerImage.sprite = speakerBanner;
+        } else {
+            speakerBannerImage = null;
+            Debug.LogError($"Sprite {bannerPath} non trouvé");
+        }
+    }
+
+    private void NextDialogue()
+    {
         currentDialogueIndex++;
 
         if (currentDialogueIndex >= dialogues.Count) {
@@ -78,19 +100,18 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    private void CloseDialogue() {
-        StopAllCoroutines();
-        dialogueText.text = "";
-        dialogueBackground.transform.parent.gameObject.SetActive(false);
+    private void CloseDialogue()
+    {
         isTalking = false;
-        isTyping = false;
+        dialogueBackground.transform.parent.gameObject.SetActive(false);
     }
 
     private void LoadDialogues(string dialogueCategory)
     {
         string filePath = Path.Combine(Application.streamingAssetsPath, "dialogues.json");
 
-        if (!File.Exists(filePath)) {
+        if (!File.Exists(filePath))
+        {
             Debug.LogError("Fichier dialogues.json introuvable !");
             return;
         }
@@ -98,19 +119,23 @@ public class DialogueManager : MonoBehaviour
         string jsonContent = File.ReadAllText(filePath);
         DialogueData dialogueData = JsonUtility.FromJson<DialogueData>(jsonContent);
 
-        if (dialogueData == null || dialogueData.dialogues == null) {
+        if (dialogueData == null || dialogueData.dialogues == null)
+        {
             Debug.LogError("Erreur lors du chargement des dialogues !");
             return;
         }
 
-        // Trouver la bonne catégorie et extraire les lignes
-        foreach (DialogueEntry entry in dialogueData.dialogues) {
-            if (entry.category == dialogueCategory) {
-                dialogues = entry.lines;
-                return;
-            }
+        // Recherche de la catégorie de dialogue dans la liste
+        DialogueEntry foundDialogue = dialogueData.dialogues.Find(d => d.category == dialogueCategory);
+
+        if (foundDialogue == null)
+        {
+            Debug.LogError($"Catégorie de dialogue '{dialogueCategory}' non trouvée !");
+            return;
         }
 
-        Debug.LogError($"Catégorie de dialogue '{dialogueCategory}' non trouvée !");
+        // Si la catégorie est trouvée, affecte les dialogues
+        dialogues = foundDialogue.lines;
+        headerName = foundDialogue.speaker + foundDialogue.team; 
     }
 }
