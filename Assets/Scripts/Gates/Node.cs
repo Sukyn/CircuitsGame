@@ -42,4 +42,18 @@ public class Node : MonoBehaviour
             Debug.Log(gameObject.name + " sélectionné !");
         }
     }
+
+    public override string ToString()
+    {
+        switch (type)
+        {
+            case NodeType.H: return "H";
+            case NodeType.X: return "X";
+            case NodeType.Z: return "Z";
+            case NodeType.X2: return "X2";
+            case NodeType.Z2: return "Z2";
+        }
+
+        return "";
+    }
 }
