@@ -32,8 +32,8 @@ public class Level : MonoBehaviour
         for (int i = 0; i < nodes.Length; i++)
         {
             Node node = nodes[i];
-            int x =  (int)node.transform.position.x;
-            int y = -(int)node.transform.position.y;
+            int x =  Mathf.FloorToInt(node.transform.position.x);
+            int y = -Mathf.FloorToInt(node.transform.position.y);
             xMin = Mathf.Min(xMin, x);
             xMax = Mathf.Max(xMax, x);
             yMin = Mathf.Min(yMin, y);
@@ -45,8 +45,8 @@ public class Level : MonoBehaviour
         for (int i = 0; i < nodes.Length; i++)
         {
             Node node = nodes[i];
-            int x =  (int)node.transform.position.x;
-            int y = -(int)node.transform.position.y;
+            int x =  Mathf.FloorToInt(node.transform.position.x);
+            int y = -Mathf.FloorToInt(node.transform.position.y);
             nodesGrid[x - xMin, y - yMin] = node;
             node.gridCoor = new Vector2Int(x, y);
         }
