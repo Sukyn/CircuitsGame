@@ -3,13 +3,13 @@ using System.Collections.Generic;
 
 public class InfiniteGrid : MonoBehaviour
 {
-    public GameObject[] objectPrefabs; // Xavié, Haictaur, Zeaurraux
-    public int initialWidth = 5;   // Largeur de départ
-    public int height = 5;         // Hauteur fixe
-    public float cellSize = 1.1f;  // Taille des cellules (avec un léger espace)
+    public GameObject[] objectPrefabs;
+    public int initialWidth = 5;
+    public int height = 1;
+    public float cellSize = 1.1f;
 
-    private List<List<GameObject>> grid = new List<List<GameObject>>(); // Grille stockée
-    private int currentWidth;      // Largeur actuelle de la grille
+    private List<GameObject> grid = new List<GameObject>();
+    private int currentWidth;
 
     void Start()
     {
@@ -25,7 +25,7 @@ public class InfiniteGrid : MonoBehaviour
         }
     }
 
-    public void ExpandGrid() // Appelle cette fonction pour ajouter une colonne
+    public void ExpandGrid()
     {
         AddColumn();
         currentWidth++;
@@ -33,8 +33,7 @@ public class InfiniteGrid : MonoBehaviour
 
     void AddColumn()
     {
-        int x = currentWidth; // Nouvelle colonne
-        List<GameObject> columnObjects = new List<GameObject>();
+        int x = currentWidth;
 
         for (int y = 0; y < height; y++)
         {
@@ -43,11 +42,9 @@ public class InfiniteGrid : MonoBehaviour
             // Sélection aléatoire parmi Xavié, Haictaur, Zeaurraux
             GameObject selectedPrefab = objectPrefabs[Random.Range(0, objectPrefabs.Length)];
             GameObject newObject = Instantiate(selectedPrefab, position, Quaternion.identity);
-            newObject.name = $"{selectedPrefab.name} ({x}, {y})"; // Nom unique
+            newObject.name = $"{selectedPrefab.name} ({x}, {y})";
 
-            columnObjects.Add(newObject);
+            grid.Add(newObject);
         }
-
-        grid.Add(columnObjects);
     }
 }
