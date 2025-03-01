@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 94c1e732a08179348b269168ccbc1766
+guid: b71ae09f6ffbed140bcf52076bbb7732
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4901612590117118656
-    second: restart-better_0
+      213: 5751257714803739564
+    second: "Xavi\xE9_0"
+  - first:
+      213: -5756408802769855943
+    second: "Xavi\xE9_1"
+  - first:
+      213: -35297320657661170
+    second: "Xavi\xE9_2"
+  - first:
+      213: -2989396570093980494
+    second: "Xavi\xE9_3"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +135,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: restart-better_0
+      name: "Xavi\xE9_0"
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 60
-        height: 50
+        x: 493
+        y: 96
+        width: 1214
+        height: 1409
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +150,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 04d9c73b159f9fbb0800000000000000
-      internalID: -4901612590117118656
+      spriteID: cab0a9e8b6290df40800000000000000
+      internalID: 5751257714803739564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Xavi\xE9_1"
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 1473
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93a98f051b02d10b0800000000000000
+      internalID: -5756408802769855943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Xavi\xE9_2"
+      rect:
+        serializedVersion: 2
+        x: 1411
+        y: 1461
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e035dac1649928ff0800000000000000
+      internalID: -35297320657661170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Xavi\xE9_3"
+      rect:
+        serializedVersion: 2
+        x: 1705
+        y: 961
+        width: 9
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b4f6c278a78386d0800000000000000
+      internalID: -2989396570093980494
       vertices: []
       indices: 
       edges: []
@@ -160,7 +235,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "Xavi\xE9_0": 5751257714803739564
+      "Xavi\xE9_1": -5756408802769855943
+      "Xavi\xE9_2": -35297320657661170
+      "Xavi\xE9_3": -2989396570093980494
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

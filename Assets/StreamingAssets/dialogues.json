@@ -1,28 +1,9 @@
 {
   "dialogues": [
-    {
-      "category": "intro",
-      "lines": [
-				"Bonjour tout le monde",
-				"Bienvenue dans le jeu !"
-			]
-    },
-    {
-      "category": "quest1",
-      "lines": [
-				"Tu veux commencer la quête ?",
-				"Tu es prêt à partir à l'aventure !"
-			]
-    },
-    {
-      "category": "quest2",
-      "lines": [
-				"Bravo, tu as terminé la quête 1 !",
-				"Prêt pour la prochaine quête ?"
-			]
-    },
 		{
 			"category": "tutoriel_1",
+			"speaker": "Ratafiel",
+			"team": "ally",
 			"lines": [
 				"Salutations, valeureux général !\nJe suis l'enchanteur Ratafiel.",
 				"Sa Majesté le roi m'a envoyé quérir pour te prêter main forte et défaire les forces armées qui assaillent le château.",
@@ -30,6 +11,14 @@
 				"Lorsque deux chevaliers de même force approchent, lance-leur le charme d'Involution pour les forcer à s'affronter.",
 				"Il n'y a pas de vainqueur, les deux meurent au combat.", 
 				"Essaie de faire de même avec les suivants !"
+			],
+			"voices": [
+				"tutoriel_1_line_1.mp3",
+				"tutoriel_1_line_2.mp3",
+				"tutoriel_1_line_3.mp3",
+				"tutoriel_1_line_4.mp3",
+				"tutoriel_1_line_5.mp3",
+				"tutoriel_1_line_6.mp3"
 			]
 		}
   ]

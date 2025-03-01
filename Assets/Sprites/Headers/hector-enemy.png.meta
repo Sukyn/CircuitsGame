@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5d1360943cfbd874391bb4020010a47b
+guid: 18926b0af66053742824453edb023153
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8299020654024365272
-    second: Zeaurraux_0
+      213: -2880041058044619481
+    second: hector-enemy_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Zeaurraux_0
+      name: hector-enemy_0
       rect:
         serializedVersion: 2
-        x: 924
-        y: 165
-        width: 1102
-        height: 1417
+        x: 0
+        y: 0
+        width: 498
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8d490c2905b0c2370800000000000000
-      internalID: 8299020654024365272
+      spriteID: 725d5b4bae90808d0800000000000000
+      internalID: -2880041058044619481
       vertices: []
       indices: 
       edges: []
