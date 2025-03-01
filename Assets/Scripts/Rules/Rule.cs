@@ -7,6 +7,9 @@ public abstract class Rule : MonoBehaviour
     protected abstract Node.NodeType[,] Right();
 
     Button button;
+    Rule[] rules;
+
+    bool IsFirstRule() => rules[0] == this;
 
     void Awake()
     {
@@ -15,24 +18,43 @@ public abstract class Rule : MonoBehaviour
 
     void Start()
     {
-        Node.nodeSelectedEvent.AddListener(OnNodeSelected);
+        if (IsFirstRule())
+            Node.nodeSelectedEvent.AddListener(OnNodeSelected);
     }
 
     void Cache()
     {
+        rules = GetComponents<Rule>();
+
         button = GetComponent<Button>();
-        button.onClick.AddListener(OnClick);
-        button.interactable = false;
+
+        if (IsFirstRule())
+        {
+            button.interactable = false;
+            button.onClick.AddListener(OnClick);
+        }
     }
 
     void OnNodeSelected()
     {
-        button.interactable = IsAppliable(Node.SelectedNodesGrid());
+
+        button.interactable = AtLeastOneRuleAppliable();
+    }
+
+    bool AtLeastOneRuleAppliable() => FirstRuleAppliable() != null;
+
+    Rule FirstRuleAppliable()
+    {
+        foreach (Rule rule in rules)
+            if (rule.IsAppliable(Node.SelectedNodesGrid()))
+                return rule;
+
+        return null;
     }
 
     void OnClick()
     {
-        Apply(Node.SelectedNodesGrid());
+        FirstRuleAppliable().Apply(Node.SelectedNodesGrid());
         Node.UnselectAllNodes();
     }
 
