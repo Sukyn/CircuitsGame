@@ -412,7 +412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playButton: {fileID: 920906007}
-  SceneName: SampleScene
+  SceneName: Mission1
 --- !u!114 &920906007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -554,15 +554,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Chevaliers du Quantique
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 895bbf1b874dde64b9a62a3876852118, type: 2}
+  m_sharedMaterial: {fileID: 7533197370455236617, guid: 895bbf1b874dde64b9a62a3876852118, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4280048783
-  m_fontColor: {r: 0.5622641, g: 0.3596215, b: 0.10927016, a: 1}
+    rgba: 4279512890
+  m_fontColor: {r: 0.22745098, g: 0.18431373, b: 0.078431375, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -769,15 +769,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Jouer
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 895bbf1b874dde64b9a62a3876852118, type: 2}
+  m_sharedMaterial: {fileID: 7533197370455236617, guid: 895bbf1b874dde64b9a62a3876852118, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4279512890
+  m_fontColor: {r: 0.22745098, g: 0.18431373, b: 0.078431375, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
