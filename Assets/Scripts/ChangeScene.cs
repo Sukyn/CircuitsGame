@@ -14,6 +14,8 @@ public class MainMenu : MonoBehaviour
 
     void StartGame()
     {
-        SceneManager.LoadScene(SceneName);
+        string currentScene = SceneManager.GetActiveScene().name; 
+        SceneManager.LoadScene(SceneName, LoadSceneMode.Single);
+        SceneManager.UnloadSceneAsync(currentScene);
     }
 }

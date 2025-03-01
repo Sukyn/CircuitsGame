@@ -183,6 +183,7 @@ MonoBehaviour:
   dialogueBackground: {fileID: 3866475295036182498}
   dialogueText: {fileID: 7713057787513975873}
   speakerBannerImage: {fileID: 4360617683464380866}
+  typingSound: {fileID: 8300000, guid: 07a53f753173df842b63972eb8c909e2, type: 3}
   dialogueSection: tutoriel_1
   typingSpeed: 0.02
 --- !u!1 &1796256291597075868
