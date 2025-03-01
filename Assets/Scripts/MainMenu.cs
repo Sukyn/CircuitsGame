@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
     public Button playButton;
-    public string SceneName = "MainMenu";
+    public string SceneName;
 
     void Start()
     {
