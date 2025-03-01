@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3253108754847460547}
   - component: {fileID: 97751668871504203}
   - component: {fileID: 8935782925416152845}
-  - component: {fileID: 1725332355333519702}
+  - component: {fileID: -5104890778465539367}
   m_Layer: 0
   m_Name: Haictaur
   m_TagString: Untagged
@@ -135,7 +135,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1725332355333519702
+--- !u!114 &-5104890778465539367
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,6 +144,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6522319500407464302}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 131c01226dd232444915935da8c1cea2, type: 3}
+  m_Script: {fileID: 11500000, guid: d9b447b025fbe7a45a3266d9ae2828d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 1

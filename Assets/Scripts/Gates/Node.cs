@@ -27,7 +27,17 @@ public class Node : MonoBehaviour
             Debug.Log(gameObject.name + " désélectionné !");
 
         } else {
-            spriteRenderer.color = Color.green;
+            switch(type) {
+                case NodeType.Z:
+                    spriteRenderer.color = Color.green;
+                    break;
+                case NodeType.X:
+                    spriteRenderer.color = Color.red;
+                    break;
+                case NodeType.H:
+                    spriteRenderer.color = Color.yellow;
+                    break;
+            }
             isSelected = true;
             Debug.Log(gameObject.name + " sélectionné !");
         }
