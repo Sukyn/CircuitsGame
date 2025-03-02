@@ -69,6 +69,9 @@ public class Node : MonoBehaviour
 
         UpdateSprites();
 
+        if (isSelected)
+            AudioSource.PlayClipAtPoint(Resources.Load(type == NodeType.Empty ? "Sounds/mechanism" : "Sounds/voice") as AudioClip, Vector3.zero);
+
         if (invokeEvent)
             nodeSelectedEvent.Invoke();
     }

@@ -42,7 +42,7 @@ public class TrashButton : MonoBehaviour
                     xArray[i]--;
         }
 
-        AudioSource.PlayClipAtPoint(Resources.Load("Sounds/swordwind") as AudioClip, Vector3.zero);
+        AudioSource.PlayClipAtPoint(Resources.Load("Sounds/mechanism") as AudioClip, Vector3.zero);
     }
 
     void OnNodeSelected()

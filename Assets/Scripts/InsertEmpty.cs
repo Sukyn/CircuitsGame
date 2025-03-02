@@ -25,7 +25,7 @@ public class InsertEmpty : MonoBehaviour
     {
         Node.UnselectAllNodes();
         Level.currentLevel.InsertEmptyColumn(x);
-        AudioSource.PlayClipAtPoint(Resources.Load("Sounds/swordwind") as AudioClip, Vector3.zero);
+        AudioSource.PlayClipAtPoint(Resources.Load("Sounds/mechanism") as AudioClip, Vector3.zero);
     }
 
     /*
