@@ -12,22 +12,22 @@ EditorBuildSettings:
     path: Assets/Scenes/Mission1.unity
     guid: 12d52eacbe79c5140bc21146a88c7f65
   - enabled: 1
-    path: Assets/JLMClean/Scenes/Level1.unity
+    path: Assets/Scenes/Level1.unity
     guid: 36ecfc0e78c144d8fb0db9112d2a9167
   - enabled: 1
-    path: Assets/JLMClean/Scenes/Level2.unity
+    path: Assets/Scenes/Level2.unity
     guid: e30f5252131be47069a05f6c8f8804c6
   - enabled: 1
-    path: Assets/JLMClean/Scenes/Level3.unity
+    path: Assets/Scenes/Level3.unity
     guid: a07ed7d4a3f9348fc9d7ffdf300783fb
   - enabled: 1
-    path: Assets/JLMClean/Scenes/Level4.unity
+    path: Assets/Scenes/Level4.unity
     guid: 2ae61db7167a24b899beac8f9501cb01
   - enabled: 1
-    path: Assets/JLMClean/Scenes/Level5.unity
+    path: Assets/Scenes/Level5.unity
     guid: c76fe7791f89a45c7b1d97c51375ee59
   - enabled: 1
-    path: Assets/JLMClean/Scenes/Level6.unity
+    path: Assets/Scenes/Level6.unity
     guid: 12230827823f049a48ce0bf9f198de24
   m_configObjects:
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 23db4805f53cbce46a265470170850f8, type: 2}

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 49091412868e843a1b3bc2426bfec29a
+guid: cd0d8f9e462a6472fb772a732eaa1271
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7626370794050879941
-    second: Castle1Road_0
+      213: -4542024518316776901
+    second: Castle1Road copie_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,17 +109,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Castle1Road_0
+      name: Castle1Road copie_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 1920
-        height: 1080
+        height: 1011
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b3efe274b20b92690800000000000000
-      internalID: -7626370794050879941
+      spriteID: b322d98e3cc77f0c0800000000000000
+      internalID: -4542024518316776901
       vertices: []
       indices: 
       edges: []
@@ -148,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Castle1Road_0: -7626370794050879941
+      Castle1Road copie_0: -4542024518316776901
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
