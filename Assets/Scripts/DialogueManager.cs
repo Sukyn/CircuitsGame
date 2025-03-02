@@ -34,7 +34,9 @@ public class DialogueManager : MonoBehaviour
     private int currentDialogueIndex = 0;
     public string dialogueSection = "tutoriel_1";
     public float typingSpeed = 0.02f;
-    public GameObject level;
+    public GameObject? level;
+    public bool autoStartDialogue = true;
+
 
     void Start() 
     {
@@ -48,7 +50,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         LoadDialogues(dialogueSection);
-        if (dialogues.Count > 0)
+        if (autoStartDialogue && dialogues.Count > 0)
         {
             StartCoroutine(ShowDialogue(dialogues[currentDialogueIndex]));
         }
@@ -158,5 +160,28 @@ public class DialogueManager : MonoBehaviour
         // Si la catégorie est trouvée, affecte les dialogues
         dialogues = foundDialogue.lines;
         headerName = foundDialogue.speaker + foundDialogue.team; 
+    }
+
+
+    public void StartDialogue()
+    {
+        ResetDialogue();
+        dialogueBackground.transform.parent.gameObject.SetActive(true);
+        LoadDialogues(dialogueSection); // Charge les dialogues sans relancer Start()
+        if (dialogues.Count > 0)
+        {
+            StartCoroutine(ShowDialogue(dialogues[currentDialogueIndex]));
+        }
+    }
+
+    public void ResetDialogue()
+    {
+        StopAllCoroutines();
+        isTalking = false;
+        isTyping = false;
+        currentDialogueIndex = 0;
+        dialogueText.text = "";
+        dialogueBackground.transform.parent.gameObject.SetActive(false);
+        Debug.Log(dialogues.Count);
     }
 }
