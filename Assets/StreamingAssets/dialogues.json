@@ -102,6 +102,58 @@
 				"Je dois y aller, mais les ennemis continuent d'affluer donc bonne chance !!"
 			],
 			"voices": []
+		},
+		{
+			"category": "tutoriel_11",
+			"speaker": "Hector",
+			"team": "Enemy",
+			"lines": [
+				"Ouaf ouaf"
+			],
+			"voices": []
+		},
+		{
+			"category": "tutoriel_12",
+			"speaker": "Ratafiel",
+			"team": "Ally",
+			"lines": [
+				"Je dois y aller, mais les ennemis continuent d'affluer donc bonne chance !!"
+			],
+			"voices": []
+		},
+		{
+			"category": "science_1",
+			"speaker": "Ratafiel",
+			"team": "Ally",
+			"lines": [
+				"Les soldats que l'on combat sont en réalité des portes logiques quantiques.",
+				"Chaque porte logique représente une opération mathématique qui transforme l'état d'un bit quantique.",
+				"Xavier, le barbare, est la porte X. Il échange les 0 et les 1, comme un interrupteur.",
+				"On l'appelle aussi la porte NON.",
+				"Zorro, le duelliste, est la porte Z. Il change la phase du qubit.",
+				"Un peu comme une note de musique qui devient un peu décalée.",
+				"Hector, le chien à deux têtes, est la porte H, ou porte de Hadamard.",
+				"Il crée la superposition quantique, mélangeant les 0 et les 1 en même temps.",
+				"Quand on réduit à néant l'armée ennemie, en réalité, on simplifie un circuit quantique, comme on réduit une équation compliquée.",
+				"Les sortilèges que l'on utilise sont en fait des opérations mathématiques qui respectent les règles du calcul quantique.",
+				"Cela permet de résoudre certains problèmes plus vite qu'avec un ordinateur classique, mais ce n'est pas simple à comprendre !",
+				"En réalité, Xavier, Zorro et Hector ne suffisent pas pour faire tous les calculs en informatique quantique.",
+				"Mais ces portes sont très importantes et font partie des outils de base pour manipuler les qubits !"
+			],
+			"voices": []
+		},
+		{
+			"category": "credits",
+			"speaker": "Ratafiel",
+			"team": "Ally",
+			"lines": [
+			"Colin Blake, Doctorant/Game Designer",
+			"Sarah Dépernet, Game Designeuse/Graphiste",
+			"Jean-Loup Martin, Développeur",
+			"Yoni Rigaut, Développeur",
+			"Garance Sempéré, Graphiste"
+			],
+			"voices": []
 		}
   ]
 }
