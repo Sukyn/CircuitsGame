@@ -41,6 +41,8 @@ public class TrashButton : MonoBehaviour
                 if (xArray[i] > x)
                     xArray[i]--;
         }
+
+        AudioSource.PlayClipAtPoint(Resources.Load("Sounds/swordwind") as AudioClip, Vector3.zero);
     }
 
     void OnNodeSelected()
