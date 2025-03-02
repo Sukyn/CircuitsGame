@@ -60,7 +60,7 @@ public class RemoveEmptyButton : MonoBehaviour
 
         foreach (int x in xSet)
             for (int y = 0; y < Level.currentLevel.nodesGrid.GetLength(1); y++)
-                if (Level.currentLevel.nodesGrid[x, y].type != Node.NodeType.Empty)
+                if (Level.currentLevel.nodesGrid[x, y].type != NodeType.Empty)
                     return false;
 
         return true;

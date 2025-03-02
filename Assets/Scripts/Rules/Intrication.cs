@@ -2,23 +2,23 @@ using UnityEngine;
 
 public class Intrication : Rule
 {
-    protected override Node.NodeType[,] Left()
+    protected override NodeType[,] Left()
     {
-        Node.NodeType[,] nodesGrid = new Node.NodeType[2, 2];
-        nodesGrid[0, 0] = Node.NodeType.ZUp;
-        nodesGrid[1, 0] = Node.NodeType.ZUp;
-        nodesGrid[0, 1] = Node.NodeType.ZDown;
-        nodesGrid[1, 1] = Node.NodeType.ZDown;
+        NodeType[,] nodesGrid = new NodeType[2, 2];
+        nodesGrid[0, 0] = NodeType.ZUp;
+        nodesGrid[1, 0] = NodeType.ZUp;
+        nodesGrid[0, 1] = NodeType.ZDown;
+        nodesGrid[1, 1] = NodeType.ZDown;
         return nodesGrid;
     }
 
-    protected override Node.NodeType[,] Right()
+    protected override NodeType[,] Right()
     {
-        Node.NodeType[,] nodesGrid = new Node.NodeType[2, 2];
-        nodesGrid[0, 0] = Node.NodeType.Empty;
-        nodesGrid[1, 0] = Node.NodeType.Empty;
-        nodesGrid[0, 1] = Node.NodeType.Empty;
-        nodesGrid[1, 1] = Node.NodeType.Empty;
+        NodeType[,] nodesGrid = new NodeType[2, 2];
+        nodesGrid[0, 0] = NodeType.Empty;
+        nodesGrid[1, 0] = NodeType.Empty;
+        nodesGrid[0, 1] = NodeType.Empty;
+        nodesGrid[1, 1] = NodeType.Empty;
         return nodesGrid;
     }
 }

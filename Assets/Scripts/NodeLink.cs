@@ -44,15 +44,15 @@ public class NodeLink : MonoBehaviour
             {
                 Node neigbor = node.GetLeftNeigbor();
 
-                if (neigbor && neigbor.type != Node.NodeType.Empty)
-                    neigbor.rightLink.SetIsSelected(isSelected, false, false, false);
+                //if (neigbor && neigbor.type != NodeType.Empty)
+                //    neigbor.rightLink.SetIsSelected(isSelected, false, false, false);
             }
             else 
             {
                 Node neigbor = node.GetRightNeigbor();
 
-                if (neigbor && neigbor.type != Node.NodeType.Empty)
-                    neigbor.leftLink.SetIsSelected(isSelected, false, false, false);
+                //if (neigbor && neigbor.type != NodeType.Empty)
+                //    neigbor.leftLink.SetIsSelected(isSelected, false, false, false);
 
             }
         }

@@ -34,9 +34,12 @@ public class DialogueManager : MonoBehaviour
     private int currentDialogueIndex = 0;
     public string dialogueSection = "tutoriel_1";
     public float typingSpeed = 0.02f;
+    public GameObject level;
 
-    void Start()
+    void Start() 
     {
+        level?.SetActive(false);
+
         if (audioSource == null)
         {
             audioSource = gameObject.AddComponent<AudioSource>();
@@ -121,6 +124,7 @@ public class DialogueManager : MonoBehaviour
     {
         isTalking = false;
         dialogueBackground.transform.parent.gameObject.SetActive(false);
+        level?.SetActive(true);
     }
 
     private void LoadDialogues(string dialogueCategory)

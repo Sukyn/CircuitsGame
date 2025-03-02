@@ -9,29 +9,23 @@ public class Node : MonoBehaviour
     public static HashSet<Node> selectedNodesSet = new HashSet<Node>();
     public static UnityEvent nodeSelectedEvent = new UnityEvent(); // Invoked each time a node has been selected or deselected
 
-    [SerializeField] SpriteRenderer spriteRenderer;
-    [SerializeField] SpriteRenderer horizontalLinkSpriteRenderer;
-    [SerializeField] GameObject upLink, downLink;
-    public NodeLink leftLink, rightLink;
-
-    private bool isSelected = false;
-    [HideInInspector] public Vector2Int gridCoor = Vector2Int.zero;
-
-    [SerializeField] List<Sprite> sprites;
-
-
     public NodeType type;
 
-    public enum NodeType {
-        X,
-        H,
-        Z,
-        XUp,
-        XDown,
-        ZUp,
-        ZDown,
-        Empty
-    }
+    public SpriteRenderer characterSR, characterOutlineSR;
+    public Sprite[] characterSprites, characterOutlineSprites;
+
+    public GameObject[] outlines;
+    public GameObject[] inserts;
+    public GameObject chain;
+
+    bool isSelected = false;
+
+    Animator animator;
+
+
+
+    [HideInInspector] public Vector2Int gridCoor = Vector2Int.zero;
+
 
     public Node GetLeftNeigbor() => GetNeigbor(-1);
 
@@ -51,18 +45,19 @@ public class Node : MonoBehaviour
         else return nodesGrid[x, gridCoor.y];
     }
 
+
     public void SetType(NodeType type)
     {
         this.type = type;
-        UpdateSprite();
+        UpdateSprites();
     }
 
-    void SetIsSelected(bool isSelected)
+    void SetIsSelected(bool isSelected, bool invokeEvent = true)
     {
         this.isSelected = isSelected;
 
-        if (isSelected)
-            NodeLink.UnselectAllLinks();
+        //if (isSelected)
+        //    NodeLink.UnselectAllLinks();
 
         if (isSelected)
             selectedNodesSet.Add(this);
@@ -70,17 +65,29 @@ public class Node : MonoBehaviour
         if (!isSelected)
             selectedNodesSet.Remove(this);
 
-        nodeSelectedEvent.Invoke();
+        animator?.SetBool("IsSelected", isSelected);
 
+        UpdateSprites();
 
-        UpdateSprite();
+        if (invokeEvent)
+            nodeSelectedEvent.Invoke();
     }
 
     void ToggleIsSelected() => SetIsSelected(!isSelected);
 
     void OnValidate()
     {
-        UpdateSprite();
+        UpdateSprites();
+    }
+
+    void Awake()
+    {
+        Cache();
+    }
+
+    void Start()
+    {
+        animator.Play("NodeIdle", 0, UnityEngine.Random.value);
     }
 
     void OnEnable()
@@ -101,44 +108,40 @@ public class Node : MonoBehaviour
         }
     }
 
-    void UpdateSprite()
-    {
-        if (!spriteRenderer)
-            return;
-
-        spriteRenderer.sprite = sprites[(int)type];
-        spriteRenderer.color = isSelected ? Color.grey : Color.white;
-        horizontalLinkSpriteRenderer.color = (type == NodeType.Empty && isSelected) ? Color.grey : Color.black;
-
-
-        upLink.SetActive(type == NodeType.XDown || type == NodeType.ZDown);
-        downLink.SetActive(type == NodeType.XDown || type == NodeType.ZDown);
-
-        leftLink.gameObject.SetActive(type != NodeType.Empty);
-        rightLink.gameObject.SetActive(type != NodeType.Empty);
-    }
 
     void OnMouseDown()
     {
+        if (Level.currentLevel.ended)
+            return;
+
         ToggleIsSelected();
     }
 
-    public override string ToString()
+    void Cache()
     {
-        switch (type)
-        {
-            case NodeType.H: return "H";
-            case NodeType.X: return "X";
-            case NodeType.Z: return "Z";
-            case NodeType.XUp: return "XU";
-            case NodeType.XDown: return "XD";
-            case NodeType.ZUp: return "ZU";
-            case NodeType.ZDown: return "ZD";
-            case NodeType.Empty: return ".";
-        }
-
-        return "";
+        animator = GetComponent<Animator>();
     }
+
+    void UpdateSprites()
+    {
+        if (!characterSR ||
+            !characterOutlineSR ||
+            characterSprites.Length < 8 ||
+            characterOutlineSprites.Length < 8)
+            return;
+
+        characterSR.sprite = characterSprites[(int)type];
+        characterOutlineSR.sprite = characterOutlineSprites[(int)type];
+
+        foreach (GameObject outline in outlines)
+            outline?.SetActive(isSelected);
+
+        chain?.SetActive(type == NodeType.XDown || type == NodeType.ZDown);
+
+        foreach (GameObject insert in inserts)
+            insert?.SetActive(type != NodeType.Empty);
+    }
+
 
     public static Node[,] SelectedNodesGrid()
     {
@@ -166,6 +169,37 @@ public class Node : MonoBehaviour
     public static void UnselectAllNodes()
     {
         foreach (Node node in selectedNodesSet.ToArray())
-            node.SetIsSelected(false);
+            node.SetIsSelected(false, false);
+
+        nodeSelectedEvent.Invoke();
     }
+
+    public override string ToString()
+    {
+        switch (type)
+        {
+            case NodeType.H: return "H";
+            case NodeType.X: return "X";
+            case NodeType.Z: return "Z";
+            case NodeType.XUp: return "XU";
+            case NodeType.XDown: return "XD";
+            case NodeType.ZUp: return "ZU";
+            case NodeType.ZDown: return "ZD";
+            case NodeType.Empty: return ".";
+        }
+
+        return "UNKNOWN";
+    }
+}
+
+public enum NodeType
+{
+    X,
+    H,
+    Z,
+    XUp,
+    XDown,
+    ZUp,
+    ZDown,
+    Empty
 }

@@ -2,19 +2,19 @@ using UnityEngine;
 
 public class Quantique : Rule
 {
-    protected override Node.NodeType[,] Left()
+    protected override NodeType[,] Left()
     {
-        Node.NodeType[,] nodesGrid = new Node.NodeType[2, 1];
-        nodesGrid[0, 0] = Node.NodeType.H;
-        nodesGrid[1, 0] = Node.NodeType.H;
+        NodeType[,] nodesGrid = new NodeType[2, 1];
+        nodesGrid[0, 0] = NodeType.H;
+        nodesGrid[1, 0] = NodeType.H;
         return nodesGrid;
     }
 
-    protected override Node.NodeType[,] Right()
+    protected override NodeType[,] Right()
     {
-        Node.NodeType[,] nodesGrid = new Node.NodeType[2, 1];
-        nodesGrid[0, 0] = Node.NodeType.Empty;
-        nodesGrid[1, 0] = Node.NodeType.Empty;
+        NodeType[,] nodesGrid = new NodeType[2, 1];
+        nodesGrid[0, 0] = NodeType.Empty;
+        nodesGrid[1, 0] = NodeType.Empty;
         return nodesGrid;
     }
 }

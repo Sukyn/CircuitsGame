@@ -138,12 +138,12 @@ TextureImporter:
       name: "Xavi\xE9_0"
       rect:
         serializedVersion: 2
-        x: 493
-        y: 96
-        width: 1214
-        height: 1409
+        x: 0
+        y: 0
+        width: 2365
+        height: 1821
       alignment: 9
-      pivot: {x: 0.62989205, y: 0.42732775}
+      pivot: {x: 0.535, y: 0.385}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []

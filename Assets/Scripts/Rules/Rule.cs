@@ -3,78 +3,35 @@ using UnityEngine.UI;
 
 public abstract class Rule : MonoBehaviour
 {
-    protected abstract Node.NodeType[,] Left();
-    protected abstract Node.NodeType[,] Right();
+    protected abstract NodeType[,] Left();
+    protected abstract NodeType[,] Right();
 
-    Button button;
-    Rule[] rules;
 
-    bool IsFirstRule() => rules[0] == this;
-
-    void Awake()
+    public void ApplyThanUnselectAllNodes()
     {
-        Cache();
-    }
-
-    void Start()
-    {
-        if (IsFirstRule())
-            Node.nodeSelectedEvent.AddListener(OnNodeSelected);
-    }
-
-    void Cache()
-    {
-        rules = GetComponents<Rule>();
-
-        button = GetComponent<Button>();
-
-        if (IsFirstRule())
-        {
-            button.interactable = false;
-            button.onClick.AddListener(OnClick);
-        }
-    }
-
-    void OnNodeSelected()
-    {
-
-        button.interactable = AtLeastOneRuleAppliable();
-    }
-
-    bool AtLeastOneRuleAppliable() => FirstRuleAppliable() != null;
-
-    Rule FirstRuleAppliable()
-    {
-        foreach (Rule rule in rules)
-            if (rule.IsAppliable(Node.SelectedNodesGrid()))
-                return rule;
-
-        return null;
-    }
-
-    void OnClick()
-    {
-        FirstRuleAppliable().Apply(Node.SelectedNodesGrid());
+        Apply(Node.SelectedNodesGrid());
         Node.UnselectAllNodes();
     }
 
-    void Apply(Node[,] nodesGrid)
+    public void Apply(Node[,] nodesGrid)
     {
         if (!IsAppliable(nodesGrid))
         {
-            Debug.LogError("!IsValide(nodesGrid)");
+            Debug.LogError("!IsAppliable(nodesGrid)");
             return;
         }
 
         SetNodesGridTypes(nodesGrid, NodesGridMatchTypesGrid(nodesGrid, Left()) ? Right() : Left());
+
+        Level.currentLevel.CheckEnd();
     }
 
-    bool IsAppliable(Node[,] nodesGrid)
+    public bool IsAppliable(Node[,] nodesGrid)
     {
         return NodesGridMatchTypesGrid(nodesGrid, Left()) || NodesGridMatchTypesGrid(nodesGrid, Right());
     }
 
-    bool NodesGridMatchTypesGrid(Node[,] nodesGrid, Node.NodeType[,] typesGrid)
+    public bool NodesGridMatchTypesGrid(Node[,] nodesGrid, NodeType[,] typesGrid)
     {
         if (nodesGrid.GetLength(0) != typesGrid.GetLength(0) ||
             nodesGrid.GetLength(1) != typesGrid.GetLength(1))
@@ -88,7 +45,7 @@ public abstract class Rule : MonoBehaviour
         return true;
     }
 
-    void SetNodesGridTypes(Node[,] nodesGrid, Node.NodeType[,] typesGrid)
+    public void SetNodesGridTypes(Node[,] nodesGrid, NodeType[,] typesGrid)
     {
         if (nodesGrid.GetLength(0) != typesGrid.GetLength(0) ||
             nodesGrid.GetLength(1) != typesGrid.GetLength(1))
@@ -99,6 +56,6 @@ public abstract class Rule : MonoBehaviour
 
         for (int y = 0; y < nodesGrid.GetLength(1); y++)
             for (int x = 0; x < nodesGrid.GetLength(0); x++)
-                nodesGrid[x, y].SetType(typesGrid[x, y]);
+                nodesGrid[x, y]?.SetType(typesGrid[x, y]);
     }
 }
