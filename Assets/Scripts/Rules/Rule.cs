@@ -23,6 +23,8 @@ public abstract class Rule : MonoBehaviour
 
         SetNodesGridTypes(nodesGrid, NodesGridMatchTypesGrid(nodesGrid, Left()) ? Right() : Left());
 
+        AudioSource.PlayClipAtPoint(Resources.Load("Sounds/swordwind") as AudioClip, Vector3.zero);
+
         Level.currentLevel.CheckEnd();
     }
 
