@@ -1,0 +1,20 @@
+{
+  "speaker": "Ratafiel",
+  "team": "Ally",
+  "lines": [
+    "Salutations, valeureux defenseur !\nJe suis la magicienne Ratafiel.",
+    "Sa Majeste le roi m'a envoyee querir pour te preter main forte et defaire les forces armees qui assaillent le chateau.",
+    "Mon sceptre quantique nous sera d'une grande aide.\nJe vais t'enseigner comment t'en servir pour semer la zizanie parmi les lignes ennemies.",
+    "Lorsque deux chevaliers de meme force approchent, lance-leur le charme d'Involution pour les forcer a s'affronter.",
+    "Il n'y a pas de vainqueur, les deux meurent au combat.",
+    "Essaie de faire de meme avec les suivants !"
+  ],
+  "voices": [
+    "tutoriel_1_line_1.mp3",
+    "tutoriel_1_line_2.mp3",
+    "tutoriel_1_line_3.mp3",
+    "tutoriel_1_line_4.mp3",
+    "tutoriel_1_line_5.mp3",
+    "tutoriel_1_line_6.mp3"
+  ]
+}

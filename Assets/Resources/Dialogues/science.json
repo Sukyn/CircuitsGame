@@ -1,0 +1,20 @@
+{
+  "speaker": "Ratafiel",
+  "team": "Ally",
+  "lines": [
+    "Les soldats que l'on combat sont en realite des portes logiques quantiques.",
+    "Chaque porte logique represente une operation mathematique qui transforme l'etat d'un bit quantique.",
+    "Xavier, le barbare, est la porte X. Il echange les 0 et les 1, comme un interrupteur.",
+    "On l'appelle aussi la porte NON.",
+    "Zorro, le duelliste, est la porte Z. Il change la phase du qubit.",
+    "Un peu comme une note de musique qui devient un peu decalee.",
+    "Hector, le chien a deux tetes, est la porte H, ou porte de Hadamard.",
+    "Il cree la superposition quantique, melangeant les 0 et les 1 en meme temps.",
+    "Quand on reduit a neant l'armee ennemie, en realite, on simplifie un circuit quantique, comme on reduit une equation compliquee.",
+    "Les sortileges que l'on utilise sont en fait des operations mathematiques qui respectent les regles du calcul quantique.",
+    "Cela permet de resoudre certains problemes plus vite qu'avec un ordinateur classique, mais ce n'est pas simple a comprendre !",
+    "En realite, Xavier, Zorro et Hector ne suffisent pas pour faire tous les calculs en informatique quantique.",
+    "Mais ces portes sont tres importantes et font partie des outils de base pour manipuler les qubits !"
+  ],
+  "voices": []
+}
